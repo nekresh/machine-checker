@@ -1,0 +1,22 @@
+{
+    "C": {
+        "programs": ["gcc", "clang"],
+        "options": {
+            "file": "%s -o /dev/null %s",
+            "lib": "-l%s"
+        },
+        "files": [
+            { "name": "sin.c", "lib": "m" }
+        ]
+    },
+    "C++": {
+        "programs": ["g++", "clang++"],
+        "options": {
+            "file": "%s -o /dev/null %s",
+            "lib": "-l%s"
+        },
+        "files": [
+            { "name": "cout.cpp" }
+        ]
+    }
+}

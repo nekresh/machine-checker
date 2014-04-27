@@ -49,10 +49,46 @@ class program_checker:
                 return path
         return None
 
+class library_checker:
+    def check(self, logger):
+        import os, shlex
+
+        libs = self.load("libraries.json")
+        
+        for lang, conf in libs.items():
+            programs = conf["programs"]
+            options = conf["options"]
+            for file in conf["files"]:
+                for p in programs:
+                    args = shlex.split(options["file"] % (p, os.path.join("testlib", file["name"])))
+                    if "lib" in file:
+                        args.append(options["lib"] % file["lib"])
+
+                    c = self.execute(args)
+                    logger.check(c, "[%s] check %s with %s" % (lang, file["name"], p))
+
+    def execute(self, args):
+        import subprocess
+
+        try:
+            p = subprocess.Popen(args, stderr=open("/dev/null", "w"))
+            return p.wait() == 0
+        except OSError:
+            pass
+        return False
+
+    def load(self, file):
+        import json
+
+        with open(file, "r") as f:
+            return json.load(f)
+
 l = logger()
 c = python_checker()
 c.check(l)
-p = program_checker()
-p.check(l)
+c = program_checker()
+c.check(l)
+c = library_checker()
+c.check(l)
 
 print(l)
