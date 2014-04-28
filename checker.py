@@ -21,16 +21,16 @@ class logger:
             self.fail(job)
 
     def __str__(self):
-        return("%s success on %s tests (%s%%)" % (self._success, self._total, self._success / self._total * 100.0))
+        return("%s success on %s tests (%.5s%%)" % (self._success, self._total, self._success / self._total * 100.0))
 
 class python_checker:
-    def check(self, logger):
+    def check(self, logger, mode):
         import sys
         logger.check(sys.version_info.major > 3 or (sys.version_info.major == 3 and sys.version_info.minor >= 3), "python>=3.3")
 
 class program_checker:
-    def check(self, logger):
-        import shutil
+    def check(self, logger, mode):
+        import shutil, os
         
         # use shutil.which when present
         if "which" in dir(shutil):
@@ -38,7 +38,20 @@ class program_checker:
         else: # fallback to custom made version if it doesn't
             w = self.which
 
-        for p in ["bash", "tcsh", "zsh", "firefox", "chromium", "google-chrome", "gcc", "g++", "clang", "clang++"]:
+        binaries = []
+        with open(os.path.join("programs", "common.programs"), "r") as f:
+            for l in f:
+                binaries.append(l.strip())
+
+        try:
+            with open(os.path.join("programs", "%s.programs" % mode), "r") as f:
+                for l in f:
+                    binaries.append(l.strip())
+        except:
+            logger.fail("mode %s" % mode)
+            pass
+
+        for p in binaries:
             logger.check(w(p) is not None, p)
 
     def which(self, program):
@@ -50,7 +63,7 @@ class program_checker:
         return None
 
 class library_checker:
-    def check(self, logger):
+    def check(self, logger, mode):
         import os, shlex
 
         libs = self.load("libraries.json")
@@ -83,12 +96,23 @@ class library_checker:
         with open(file, "r") as f:
             return json.load(f)
 
-l = logger()
-c = python_checker()
-c.check(l)
-c = program_checker()
-c.check(l)
-c = library_checker()
-c.check(l)
+def main(args):
+    import getopt
 
-print(l)
+    mode = "std"
+    if len(args) > 1:
+        mode = args[1]
+
+    l = logger()
+    c = python_checker()
+    c.check(l, mode)
+    c = program_checker()
+    c.check(l, mode)
+    c = library_checker()
+    c.check(l, mode)
+    
+    print(l)
+
+if __name__ == "__main__":
+    import sys
+    main(sys.argv)
