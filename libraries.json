@@ -9,7 +9,19 @@
             { "name": "sin.c", "lib": "m" },
             { "name": "execve.c" },
             { "name": "fork.c" },
-            { "name": "printf.c" }
+            { "name": "printf.c" },
+            { "name": "XOpenDisplay.c", "lib": "X11" },
+            { "name": "XCloseDisplay.c", "lib": "X11" },
+            { "name": "XFlush.c", "lib": "X11" },
+            { "name": "efence.c", "lib": "efence" },
+            { "name": "dmalloc.c", "lib": "dmalloc" },
+            { "name": "sdl.c", "lib": "SDL" },
+            { "name": "gmp.c", "lib": "gmp" },
+            { "name": "gd.c", "lib": "gd" },
+            { "name": "alsa.c", "lib": "alsa" },
+            { "name": "magickwand.c", "lib": "MagickWand" },
+            { "name": "magickcore.c", "lib": "MagickCore" },
+            { "name": "gif.c", "lib": "gif" }
         ]
     },
     "C++": {
