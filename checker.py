@@ -73,7 +73,7 @@ class library_checker:
             options = conf["options"]
             for file in conf["files"]:
                 for p in programs:
-                    args = shlex.split(options["file"] % (p, os.path.join("testlib", file["name"])))
+                    args = shlex.split(options["file"] % (p, os.path.join("testlib", lang, file["name"])))
                     if "lib" in file:
                         args.append(options["lib"] % file["lib"])
 
