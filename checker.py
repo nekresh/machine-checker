@@ -66,7 +66,7 @@ class library_checker:
     def check(self, logger, mode):
         import os, shlex
 
-        libs = self.load("libraries.json")
+        libs = self.load(os.path.join("testlib", "libraries.json"))
         
         for lang, conf in libs.items():
             programs = conf["programs"]
