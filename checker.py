@@ -74,11 +74,31 @@ class library_checker:
             for file in conf["files"]:
                 for p in programs:
                     args = shlex.split(options["file"] % (p, os.path.join("testlib", lang, file["name"])))
-                    if "lib" in file:
-                        args.append(options["lib"] % file["lib"])
+
+                    for key in file:
+                        if not key == "name":
+                            tmp = self.getAdditionalArgs(key, file, options)
+                            for item in tmp:
+                                args.append(item)
 
                     c = self.execute(args)
                     logger.check(c, "[%s] check %s with %s" % (lang, file["name"], p))
+
+    def getAdditionalArgs(self, key, file, options):
+        entry = file[key]
+        
+        if type(entry) is dict and "$exec" in entry:
+            import shlex, subprocess
+            args = shlex.split(entry["$exec"])
+
+            try:
+                output = subprocess.check_output(args).decode("ascii")
+            except OSError:
+                output = ""
+
+            return shlex.split(output)
+
+        return [ options[key] % file[key] ]
 
     def execute(self, args):
         import subprocess
