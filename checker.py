@@ -97,6 +97,8 @@ class library_checker:
                 output = ""
 
             return shlex.split(output)
+        elif type(entry) is list:
+            return [ options[key] % item for item in entry ]
 
         return [ options[key] % file[key] ]
 
