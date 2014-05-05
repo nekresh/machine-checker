@@ -19,8 +19,8 @@
             { "name": "gmp.c", "lib": "gmp" },
             { "name": "gd.c", "lib": "gd" },
             { "name": "alsa.c", "lib": "alsa" },
-            { "name": "magickwand.c", "lib": "MagickWand" },
-            { "name": "magickcore.c", "lib": "MagickCore" },
+            { "name": "magickwand.c", "include": { "$exec": "pkg-config MagickWand --cflags"}, "lib": { "$exec": "pkg-config MagickWand --libs"} },
+            { "name": "magickcore.c", "include": { "$exec": "pkg-config MagickCore --cflags"}, "lib": { "$exec": "pkg-config MagickCore --libs"} },
             { "name": "gif.c", "lib": "gif" }
         ]
     },
