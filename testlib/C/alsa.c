@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <asound.h>
+#include <asoundlib.h>
 
 int main(int ac, char** av)
 {
