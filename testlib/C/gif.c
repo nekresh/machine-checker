@@ -3,6 +3,6 @@
 
 int main(int ac, char** av)
 {
-    DGifOpenFileName(NULL, NULL);
+    DGifOpenFileName(NULL);
     return (0);
 }
