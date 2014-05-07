@@ -92,8 +92,11 @@ class library_checker:
             args = shlex.split(entry["$exec"])
 
             try:
-                output = subprocess.check_output(args).decode("ascii")
+                with open("/dev/null", "w") as stderr:
+                    output = subprocess.check_output(args, stderr=stderr).decode("ascii")
             except OSError:
+                output = ""
+            except subprocess.CalledProcessError:
                 output = ""
 
             return shlex.split(output)
@@ -106,8 +109,9 @@ class library_checker:
         import subprocess
 
         try:
-            p = subprocess.Popen(args, stderr=open("/dev/null", "w"))
-            return p.wait() == 0
+            with open("/dev/null", "w") as stderr:
+                p = subprocess.Popen(args, stderr=stderr)
+                return p.wait() == 0
         except OSError:
             pass
         return False
