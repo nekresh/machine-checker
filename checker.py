@@ -109,9 +109,35 @@ class library_checker:
         import subprocess
 
         try:
-            with open("/dev/null", "w") as stderr:
-                p = subprocess.Popen(args, stderr=stderr)
-                return p.wait() == 0
+            p = subprocess.Popen(args, stderr=subprocess.DEVNULL)
+            return p.wait() == 0
+        except OSError:
+            pass
+        return False
+
+    def load(self, file):
+        import json
+
+        with open(file, "r") as f:
+            return json.load(f)
+
+class manpage_checker:
+    def check(self, logger, mode):
+        import os
+
+        manpages = self.load(os.path.join("mans", "manpages.json"))
+
+        for category, pages in manpages.items():
+            for page in pages:
+                c = self.execute(category, page)
+                logger.check(c, "[man] %s %s" % (category, page))
+
+    def execute(self, category, page):
+        import subprocess
+
+        try:
+            p = subprocess.Popen(["man", category, page], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            return p.wait() == 0
         except OSError:
             pass
         return False
@@ -135,6 +161,8 @@ def main(args):
     c = program_checker()
     c.check(l, mode)
     c = library_checker()
+    c.check(l, mode)
+    c = manpage_checker()
     c.check(l, mode)
     
     print(l)

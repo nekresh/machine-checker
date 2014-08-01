@@ -1,0 +1,46 @@
+{
+	"1": [
+		"gcc",
+		"g++",
+		"clang",
+		"bash"
+	],
+	"2": [
+		"fork",
+		"execve",
+		"setsid",
+		"setpgid",
+		"open",
+		"read",
+		"write",
+		"close",
+		"socket",
+		"bind",
+		"listen",
+		"connect",
+		"dup",
+		"dup2",
+		"pipe"
+	],
+	"3": [
+		"malloc",
+		"free",
+		"realloc",
+		"printf",
+		"strcmp",
+		"strncmp",
+		"strdup",
+		"opendir",
+		"readdir",
+		"closedir",
+		"tgetent",
+		"tgoto",
+		"tgetstr",
+		"tcgetattr",
+		"tcsetattr"
+	],
+	"7": [
+		"signal",
+		"credentials"
+	]
+}
