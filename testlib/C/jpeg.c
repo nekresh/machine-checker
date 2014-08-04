@@ -1,5 +1,6 @@
-#include <jpeglib.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <jpeglib.h>
 
 int	main(int ac, char** av)
 {
