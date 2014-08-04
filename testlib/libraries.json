@@ -16,6 +16,7 @@
             { "name": "efence.c", "lib": "efence" },
             { "name": "dmalloc.c", "lib": "dmalloc" },
             { "name": "sdl.c", "include": { "$exec": "sdl-config --cflags"}, "lib": { "$exec": "sdl-config --libs"} },
+            { "name": "sdl_image.c", "include": { "$exec": "pkg-config SDL_image --cflags"}, "lib": { "$exec": "pkg-config SDL_image --libs"} },
             { "name": "gmp.c", "lib": "gmp" },
             { "name": "gd.c", "lib": "gd" },
             { "name": "alsa.c", "include": { "$exec": "pkg-config alsa --cflags" }, "lib": { "$exec": "pkg-config alsa --libs"} },
