@@ -27,7 +27,8 @@
             { "name": "gif.c", "lib": "gif" },
 	    { "name": "mlx.c", "lib": "mlx", "libs": "-lX11 -lXext" },
 	    { "name": "termcap.c", "lib": "ncurses" },
-	    { "name": "curses.c", "lib": "ncurses" }
+	    { "name": "curses.c", "lib": "ncurses" },
+	    { "name": "opengl.c", "lib": "GL" }
         ]
     },
     "C++": {
