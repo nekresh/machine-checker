@@ -44,7 +44,12 @@
 		"mlx_new_image",
 		"mlx_get_data_addr",
 		"mlx_put_pixel_to_window",
-		"mlx_get_color_value"
+		"mlx_get_color_value",
+		"endwin",
+		"cbreak",
+		"echo",
+		"has_colors",
+		"start_color"
 	],
 	"5": [
 		"termcap",
