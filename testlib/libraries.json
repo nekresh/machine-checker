@@ -29,7 +29,8 @@
 	    { "name": "termcap.c", "lib": "ncurses" },
 	    { "name": "curses.c", "lib": "ncurses" },
 	    { "name": "opengl.c", "lib": "GL" },
-	    { "name": "openssl.c", "lib": "ssl" }
+	    { "name": "openssl.c", "lib": "ssl" },
+	    { "name": "jpeg.c", "lib": "jpeg" }
         ]
     },
     "C++": {
