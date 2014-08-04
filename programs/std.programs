@@ -40,3 +40,9 @@ firefox
 vlc
 alsamixer
 gprof
+python2.7
+virtualenv
+pip
+pip3
+pdflatex
+fusermount
