@@ -37,7 +37,14 @@
 		"tgoto",
 		"tgetstr",
 		"tcgetattr",
-		"tcsetattr"
+		"tcsetattr",
+		"mlx_init",
+		"mlx_new_window",
+		"mlx_put_pixel",
+		"mlx_new_image",
+		"mlx_get_data_addr",
+		"mlx_put_pixel_to_window",
+		"mlx_get_color_value"
 	],
 	"7": [
 		"signal",
