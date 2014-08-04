@@ -26,7 +26,8 @@
             { "name": "magickcore.c", "include": { "$exec": "pkg-config MagickCore --cflags"}, "lib": { "$exec": "pkg-config MagickCore --libs"} },
             { "name": "gif.c", "lib": "gif" },
 	    { "name": "mlx.c", "lib": "mlx", "libs": "-lX11 -lXext" },
-	    { "name": "termcap.c", "lib": "ncurses" }
+	    { "name": "termcap.c", "lib": "ncurses" },
+	    { "name": "curses.c", "lib": "ncurses" }
         ]
     },
     "C++": {
