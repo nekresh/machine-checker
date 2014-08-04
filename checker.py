@@ -34,7 +34,7 @@ class python_checker:
 
     def check(self, mode):
         import sys
-        self._logger.check(sys.version_info.major > 3 or (sys.version_info.major == 3 and sys.version_info.minor >= 3), "python>=3.3")
+        self._logger.check(sys.version_info.major > 3 or (sys.version_info.major == 3 and sys.version_info.minor >= 3), "[python] python>=3.3")
 
 class program_checker:
     def __init__(self, logger):
@@ -63,7 +63,7 @@ class program_checker:
             pass
 
         for p in binaries:
-            self._logger.check(w(p) is not None, p)
+            self._logger.check(w(p) is not None, "[program] %s" % p)
 
     def which(self, program):
         import os
