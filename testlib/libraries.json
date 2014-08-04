@@ -28,7 +28,8 @@
 	    { "name": "mlx.c", "lib": "mlx", "libs": "-lX11 -lXext" },
 	    { "name": "termcap.c", "lib": "ncurses" },
 	    { "name": "curses.c", "lib": "ncurses" },
-	    { "name": "opengl.c", "lib": "GL" }
+	    { "name": "opengl.c", "lib": "GL" },
+	    { "name": "openssl.c", "lib": "ssl" }
         ]
     },
     "C++": {

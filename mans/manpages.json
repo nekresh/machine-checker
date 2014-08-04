@@ -3,7 +3,8 @@
 		"gcc",
 		"g++",
 		"clang",
-		"bash"
+		"bash",
+		"openssl"
 	],
 	"2": [
 		"fork",
@@ -49,7 +50,8 @@
 		"cbreak",
 		"echo",
 		"has_colors",
-		"start_color"
+		"start_color",
+		"ssl"
 	],
 	"5": [
 		"termcap",
