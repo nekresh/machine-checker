@@ -18,6 +18,7 @@
             { "name": "sdl.c", "include": { "$exec": "sdl-config --cflags"}, "lib": { "$exec": "sdl-config --libs"} },
             { "name": "sdl_image.c", "include": { "$exec": "pkg-config SDL_image --cflags"}, "lib": { "$exec": "pkg-config SDL_image --libs"} },
             { "name": "sdl_mixer.c", "include": { "$exec": "pkg-config SDL_mixer --cflags"}, "lib": { "$exec": "pkg-config SDL_mixer --libs"} },
+            { "name": "sdl_ttf.c", "lib": "SDL_ttf" },
             { "name": "gmp.c", "lib": "gmp" },
             { "name": "gd.c", "lib": "gd" },
             { "name": "alsa.c", "include": { "$exec": "pkg-config alsa --cflags" }, "lib": { "$exec": "pkg-config alsa --libs"} },
