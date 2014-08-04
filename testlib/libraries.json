@@ -25,7 +25,8 @@
             { "name": "magickwand.c", "include": { "$exec": "pkg-config MagickWand --cflags"}, "lib": { "$exec": "pkg-config MagickWand --libs"} },
             { "name": "magickcore.c", "include": { "$exec": "pkg-config MagickCore --cflags"}, "lib": { "$exec": "pkg-config MagickCore --libs"} },
             { "name": "gif.c", "lib": "gif" },
-	    { "name": "mlx.c", "lib": "mlx", "libs": "-lX11 -lXext" }
+	    { "name": "mlx.c", "lib": "mlx", "libs": "-lX11 -lXext" },
+	    { "name": "termcap.c", "lib": "ncurses" }
         ]
     },
     "C++": {

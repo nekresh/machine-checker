@@ -46,6 +46,10 @@
 		"mlx_put_pixel_to_window",
 		"mlx_get_color_value"
 	],
+	"5": [
+		"termcap",
+		"terminfo"
+	],
 	"7": [
 		"signal",
 		"credentials"
