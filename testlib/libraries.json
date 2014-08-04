@@ -31,7 +31,8 @@
             "lib": "-l%s"
         },
         "files": [
-            { "name": "cout.cpp" }
+            { "name": "cout.cpp" },
+            { "name": "sfml.cpp", "include": { "$exec": "pkg-config sfml-graphics --cflags"}, "lib": { "$exec": "pkg-config sfml-graphics --libs"} }
         ]
     }
 }
