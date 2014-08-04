@@ -30,7 +30,8 @@
 	    { "name": "curses.c", "lib": "ncurses" },
 	    { "name": "opengl.c", "lib": "GL" },
 	    { "name": "openssl.c", "lib": "ssl" },
-	    { "name": "jpeg.c", "lib": "jpeg" }
+	    { "name": "jpeg.c", "lib": "jpeg" },
+	    { "name": "png.c", "lib": "png" }
         ]
     },
     "C++": {
