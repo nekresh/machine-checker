@@ -7,7 +7,7 @@ char const*	greet()
 
 BOOST_PYTHON_MODULE(hello_ext)
 {
-	using namespace boot::python;
+	using namespace boost::python;
 	def("greet", greet);
 }
 
