@@ -50,7 +50,8 @@
 	    { "name": "cpp11_thread.cpp", "std": "-std=c++11" },
 	    { "name": "cpp11_function.cpp", "std": "-std=c++11" },
 	    { "name": "cpp11_regex.cpp", "std": "-std=c++11" },
-	    { "name": "cpp11_atomic.cpp", "std": "-std=c++11" }
+	    { "name": "cpp11_atomic.cpp", "std": "-std=c++11" },
+	    { "name": "qt4.cpp", "include": { "$exec": "pkg-config QtGui --cflags" }, "lib": { "$exec": "pkg-config QtGui --libs" } }
         ]
     }
 }
