@@ -1,6 +1,6 @@
 {
     "C": {
-        "programs": ["gcc", "clang", "gcc -m32", "clang -m32"],
+        "programs": ["gcc", "clang"],
         "options": {
             "file": "%s -o /dev/null %s",
             "lib": "-l%s"
@@ -37,7 +37,7 @@
         ]
     },
     "C++": {
-        "programs": ["g++", "clang++", "g++ -m32", "clang++ -m32"],
+        "programs": ["g++", "clang++"],
         "options": {
             "file": "%s -o /dev/null %s",
             "lib": "-l%s"
