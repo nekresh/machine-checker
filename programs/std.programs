@@ -17,7 +17,6 @@ autoconf
 automake
 strace
 ltrace
-ftrace
 screen
 ssh
 curl
