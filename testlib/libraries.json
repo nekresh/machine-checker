@@ -31,7 +31,8 @@
 	    { "name": "opengl.c", "lib": "GL" },
 	    { "name": "openssl.c", "lib": "ssl" },
 	    { "name": "jpeg.c", "lib": "jpeg" },
-	    { "name": "png.c", "lib": "png" }
+	    { "name": "png.c", "lib": "png" },
+	    { "name": "gtk.c", "include": { "$exec": "pkg-config gtk+-3.0 --cflags"}, "lib": { "$exec": "pkg-config gtk+-3.0 --libs" } }
         ]
     },
     "C++": {
