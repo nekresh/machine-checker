@@ -12,7 +12,7 @@ wpa_gui
 emacs
 vim
 nano
-xpdf
+mupdf
 evince
 nm
 objdump
