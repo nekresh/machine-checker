@@ -44,7 +44,11 @@
             { "name": "cout.cpp" },
             { "name": "sfml.cpp", "include": { "$exec": "pkg-config sfml-graphics --cflags"}, "lib": { "$exec": "pkg-config sfml-graphics --libs"} },
 	    { "name": "boost_spirit.cpp" },
-	    { "name": "boost_python.cpp", "include": { "$exec": "pkg-config python --cflags" }, "lib": "boost_python", "libs": { "$exec": "pkg-config python --libs" } }
+	    { "name": "boost_python.cpp", "include": { "$exec": "pkg-config python --cflags" }, "lib": "boost_python", "libs": { "$exec": "pkg-config python --libs" } },
+	    { "name": "cpp11_thread.cpp", "std": "-std=c++11" },
+	    { "name": "cpp11_function.cpp", "std": "-std=c++11" },
+	    { "name": "cpp11_regex.cpp", "std": "-std=c++11" },
+	    { "name": "cpp11_atomic.cpp", "std": "-std=c++11" }
         ]
     }
 }
