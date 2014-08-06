@@ -3,7 +3,6 @@ make
 g++
 rendu
 mariadb
-mysql
 clang
 clang++
 git
