@@ -47,3 +47,5 @@ pdflatex
 fusermount
 qtcreator
 qmake
+npm
+node
